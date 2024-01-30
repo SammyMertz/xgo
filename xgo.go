@@ -1,4 +1,4 @@
-// Go CGO cross compiler
+//!Go CGO cross compiler
 // Copyright (c) 2014 Péter Szilágyi. All rights reserved.
 //
 // Released under the MIT license.
@@ -52,7 +52,7 @@ var (
 	outFolder   = flag.String("dest", "", "Destination folder to put binaries in (empty = current)")
 	crossDeps   = flag.String("deps", "", "CGO dependencies (configure/make based archives)")
 	crossArgs   = flag.String("depsargs", "", "CGO dependency configure arguments")
-	targets     = flag.String("targets", "*/*", "Comma separated targets to build for")
+	targets     = flag.String("targets", "!/*", "Comma separated targets to build for")
 	dockerImage = flag.String("image", "", "Use custom docker image instead of official distribution")
 )
 
@@ -371,3 +371,4 @@ func run(cmd *exec.Cmd) error {
 
 	return cmd.Run()
 }
+ 
